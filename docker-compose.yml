@@ -1,0 +1,7 @@
+version: '3'
+services:
+  test-php-unit:
+    image: test-php-unit
+    volumes:
+    - "./tests:/usr/local/src/"
+    command: "vendor/bin/phpunit"

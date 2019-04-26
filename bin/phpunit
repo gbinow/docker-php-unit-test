@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BINPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+docker run -it \
+-v $BINPATH/../tests:/usr/local/src/tests \
+-v $BINPATH/../src:/usr/local/src/src \
+test-php-unit \
+vendor/bin/phpunit --bootstrap vendor/autoload.php tests

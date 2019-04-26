@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BINPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+docker run -it \
+-v $BINPATH/../vendor:/tmp \
+test-php-unit \
+sh -c "cp -r /usr/local/src/vendor/* /tmp"
